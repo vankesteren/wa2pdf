@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{float}
+\usepackage{ltxtable}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+
+\title{ {{title}} }
+\author{ | {{#each authors}} {{.}} | {{/each}} }
+\begin{document}
+
+\maketitle
+
+\LTXtable{\textwidth}{table.tex}
+
+\end{document}

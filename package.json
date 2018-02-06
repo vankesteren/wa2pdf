@@ -1,0 +1,21 @@
+{
+  "name": "wa2pdf",
+  "version": "1.0.0",
+  "description": "Convert whatsapp logs to a pdf report",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Erik-Jan van Kesteren",
+  "license": "MIT",
+  "bin": {
+    "wa2pdf": "./cli/wa2pdf.js"
+  },
+  "dependencies": {
+    "commander": "^2.13.0",
+    "handlebars": "^4.0.11",
+    "mv": "^2.1.1",
+    "tmp": "0.0.33",
+    "whatsapp-log-parser": "^0.2.0"
+  }
+}

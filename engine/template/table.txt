@@ -1,0 +1,7 @@
+\begin{longtable}{rX}
+  {{#each messages}}
+     & {\tiny {{date}} } \\
+     {{sender}} & {{message}}\\
+     & \\
+  {{/each}}
+\end{longtable}
