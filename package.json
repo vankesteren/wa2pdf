@@ -1,6 +1,6 @@
 {
   "name": "wa2pdf",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Convert whatsapp logs to a pdf report",
   "main": "main.js",
   "scripts": {
