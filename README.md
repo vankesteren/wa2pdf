@@ -8,12 +8,13 @@
 
 ### How to install
 1. Make sure you have `xelatex` in your `PATH`. If it isn't, install [MiKTeX](https://miktex.org/) (Windows), [TeX live](https://www.tug.org/texlive/) (Linux), or [MacTeX](http://www.tug.org/mactex/) (OSX). During install, be sure to allow automatic package updates.
-2. Make sure you have the font `DejaVu Sans` installed. You can also get it from `dist/dejavu-sans` in this repository.
-3. `npm install -g vankesteren/wa2pdf`
-4. profit.
+2. Make sure you have the font `DejaVu Sans` installed. You can get it from `dist/dejavu-sans` in this repository.
+3. Make sure you have [Node.js](https://nodejs.org/) installed.
+4. `npm install -g vankesteren/wa2pdf`
 
 ### How to use
-The a command line interface (see folder `./cli`) works like this:
+The command line interface (see folder `./cli`) works like this:
+
 `wa2pdf whatsapplog.txt -o prettylog.pdf`
 
 Here is the help for usage:
