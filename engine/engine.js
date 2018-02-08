@@ -22,8 +22,7 @@ convert = function(file, outFile, debug, callback) {
       if (err) return callback(err);
       // convert tex filt to pdf
       toPdf(paths, outFile, debug, (err, pdfPath) => {
-        if (err) callback(err);
-        console.log("Success! Location: " + pdfPath);
+        if (err) return callback(err);
         return callback(null, pdfPath);
       });
     });
@@ -91,8 +90,10 @@ compileContents = function(msgs) {
   msgsFormatted = [];
   for (i in msgs) {
     var msg = {};
-    msg.message = lesc(msgs[i].message, { preserveFormatting: true });
-    msg.sender = lesc(msgs[i].sender, { preserveFormatting: true });
+    msg.message = lesc(msgs[i].message, { preserveFormatting: false });
+    if (msgs[i].sender) {
+      msg.sender = lesc(msgs[i].sender, { preserveFormatting: false });
+    }
     let d = new Date(msgs[i].date)
     msg.date = d.toLocaleString();
     msgsFormatted.push(msg);
@@ -101,7 +102,9 @@ compileContents = function(msgs) {
   let result = {
     main: {
       title: "Whatsapp conversation",
-      authors: authors
+      authors: authors,
+      firstDate: msgsFormatted[0].date,
+      lastDate: msgsFormatted[msgsFormatted.length-1].date
     },
     messages: msgsFormatted
   };

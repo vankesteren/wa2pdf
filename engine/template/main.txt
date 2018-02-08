@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[margin=1in]{geometry}
 \usepackage{float}
 \usepackage{ltxtable}
 \usepackage{fontspec}
@@ -6,10 +7,11 @@
 
 \title{ {{title}} }
 \author{ | {{#each authors}} {{.}} | {{/each}} }
+\date{ {{firstDate}} - {{lastDate}} }
 \begin{document}
 
 \maketitle
-
+\hrule
 \LTXtable{\textwidth}{table.tex}
-
+\hrule
 \end{document}
