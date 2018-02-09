@@ -34,6 +34,7 @@ Here is the help for usage:
 ```
 
 ### To do
+- Create [unit tests](https://travis-ci.org/vankesteren/wa2pdf)
 - Server interface:
     - send your whatsapp log via email?
     - upload your log to a webpage?
