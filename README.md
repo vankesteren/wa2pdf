@@ -3,11 +3,14 @@
   <br-->
   <h1 align="center">wa2pdf</h1>
   <h4 align="center">Convert whatsapp logs to a presentable pdf report</h4>
+  <p align="center">
+    <a href="https://travis-ci.org/vankesteren/wa2pdf"><img src="https://travis-ci.org/vankesteren/wa2pdf.svg?branch=master"></a>
+  </p>
 </p>
 <br>
 
 ### How to install
-1. Make sure you have `xelatex` in your `PATH`. If it isn't, install [MiKTeX](https://miktex.org/) (Windows), [TeX live](https://www.tug.org/texlive/) (Linux), or [MacTeX](http://www.tug.org/mactex/) (OSX). During install, be sure to allow automatic package updates.
+1. Make sure you have `xelatex` in your `PATH`. If it isn't, install a TeX distribution such as [MiKTeX](https://miktex.org/) (Windows), [TeX live](https://www.tug.org/texlive/) (Linux), or [MacTeX](http://www.tug.org/mactex/) (OSX). 
 2. Make sure you have the font `DejaVu Sans` installed. You can get it from `dist/dejavu-sans` in this repository.
 3. Make sure you have [Node.js](https://nodejs.org/) installed.
 4. `npm install -g vankesteren/wa2pdf`
