@@ -33,8 +33,13 @@ Here is the help for usage:
     -h, --help               output usage information
 ```
 
-### What's next?
+### To do
 - Server interface:
     - send your whatsapp log via email?
     - upload your log to a webpage?
-- Template: actually make it pretty
+- Template: Make the template pretty.
+- CLI: use chalk to style output https://www.npmjs.com/package/chalk.
+- Output: Optionally, calculate statistics etc for the report to be shown on top
+    - total number of messages per person
+    - most common words
+    - other summary info
