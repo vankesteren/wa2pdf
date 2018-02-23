@@ -9,4 +9,4 @@ addons:
       - ttf-dejavu
 before_install:
   - npm install
-  - node ./cli/wa2pdf.js test/escape.txt # make sure pkgs are installed
+  - node ./cli/wa2pdf.js test/escape.txt -n -s # make sure pkgs are installed

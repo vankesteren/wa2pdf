@@ -12,6 +12,7 @@ program
   .option("-o, --output <filename>", "The output file (.pdf)")
   .option("-d, --debug", "Print debug information")
   .option("-s, --silent", "Do not open the converted pdf.")
+  .option("-n, --noprogress", "Do not show progress indicator.")
   .action((file) => {
     if (!program.output) {
       var outFile = path.basename(file, path.extname(file)) + ".pdf";
@@ -20,14 +21,22 @@ program
     }
 
     // init spinner
-    var sp = new Spinner(chalk.cyan("Converting " + file + " to " + outFile));
-    sp.setSpinnerString("~!@#$%^&*()_+");
-    sp.start();
+    if (!program.noprogress) {
+      var sp = new Spinner(chalk.cyan("Converting " + file + " to " + outFile));
+      sp.setSpinnerString("~!@#$%^&*()_+");
+      sp.start();
+    } else {
+      console.log(chalk.cyan("Converting " + file + " to " + outFile));
+    }
 
     // convert file
     engine.convert(file, outFile, program.debug, (err, path) => {
-      // stop spinner
-      sp.stop();
+      if (!program.noprogress) {
+        // stop spinner
+        sp.stop();
+      } else {
+        console.log(chalk.green("Done"));
+      }
 
       if (err) {
         console.error(err.name + ": " + err.message);
