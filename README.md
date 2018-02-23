@@ -11,7 +11,7 @@
 
 ### How to install
 1. Make sure you have `xelatex` in your `PATH`. If it isn't, install a TeX distribution such as [MiKTeX](https://miktex.org/) (Windows), [TeX live](https://www.tug.org/texlive/) (Linux), or [MacTeX](http://www.tug.org/mactex/) (OSX).
-2. Make sure you have the font `DejaVu Sans` installed. You can get it from `dist/dejavu-sans` in this repository.
+2. Make sure you have the font `DejaVu Sans` installed. You can get it from `dist/dejavu-sans` in this repository or from [dejavu-fonts/dejavu-fonts](https://github.com/dejavu-fonts/dejavu-fonts/releases).
 3. Make sure you have [Node.js](https://nodejs.org/) installed.
 4. `npm install -g vankesteren/wa2pdf`
 
