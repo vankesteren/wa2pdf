@@ -4,7 +4,7 @@
   "description": "Convert whatsapp logs to a pdf report",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Erik-Jan van Kesteren",
   "license": "MIT",
@@ -24,5 +24,9 @@
     "mv": "^2.1.1",
     "tmp": "0.0.33",
     "whatsapp-log-parser": "github:vankesteren/whatsapp-log-parser"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1"
   }
 }
