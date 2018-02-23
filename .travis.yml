@@ -5,7 +5,7 @@ dist: trusty
 addons:
   apt:
     packages:
-      - texlive-xetex
+      - texlive-full
       - ttf-dejavu
 before_install:
   - npm install
