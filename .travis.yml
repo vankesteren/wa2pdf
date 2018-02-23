@@ -7,3 +7,5 @@ addons:
     packages:
       - texlive-xetex
       - ttf-dejavu
+before_install:
+  - node ./cli/wa2pdf.js test/escape.pdf # make sure pkgs are installed
