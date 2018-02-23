@@ -3,16 +3,13 @@ const mv = require("mv");
 const path = require("path");
 const walp = require("whatsapp-log-parser");
 const hndl = require("handlebars");
-const lesc = require('escape-latex');
+const lesc = require("escape-latex");
 const tmp = require("tmp");
 const cp = require("child_process");
+const chalk = require("chalk");
 
 convert = function(file, outFile, debug, callback) {
-  if (!outFile) {
-    var outFile = path.basename(file, path.extname(file)) + ".pdf";
-  }
-
-  console.log("\n  >>> Converting " + file + " to " + outFile + " <<<\n");
+  if (debug) (chalk.yellow("  >>> Printing debug information <<<\n"))
 
   // convert .txt log to js object
   walp(path.resolve(file), (err, msgs) => {
@@ -53,8 +50,9 @@ toTex = function(msgs, debug, callback) {
 
       // print on debug
       if (debug) {
-        console.log(mainString);
-        console.log(tableString);
+        console.log("\n")
+        console.log(chalk.yellow(mainString));
+        console.log(chalk.yellow(tableString));
       }
 
       // create a directory to build the pdf and save the texfiles in it
@@ -68,7 +66,7 @@ toTex = function(msgs, debug, callback) {
           tex: path.join(dirpath, "wa2pdf.tex"),
           pdf: path.join(dirpath, "wa2pdf.pdf")
         };
-        if (debug) console.log(paths);
+        if (debug) console.log(chalk.yellow(paths));
         // write the files
         fs.writeFile(paths.tbl, tableString, (err) => {
           if (err) return callback(err);
@@ -135,15 +133,15 @@ toPdf = function(paths, outFile, debug, callback) {
         // xelatex is error-prone but does output pdf often.
         // let the move operation handle a no-pdf error.
         if (debug) {
-          console.log("\nSome xelatex errors found:");
-          console.log(stdout);
+          console.log(chalk.redBright("\nSome xelatex errors found:"));
+          console.log(chalk.redBright(stdout));
           console.log("\n");
         }
       }
     }
 
     // show stdout
-    if (debug) console.log(stdout);
+    if (debug) console.log(chalk.redBright(stdout));
 
     // move the created pdf to the desired output location
     let pdfPath = path.resolve(outFile);

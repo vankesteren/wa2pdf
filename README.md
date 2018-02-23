@@ -10,7 +10,7 @@
 <br>
 
 ### How to install
-1. Make sure you have `xelatex` in your `PATH`. If it isn't, install a TeX distribution such as [MiKTeX](https://miktex.org/) (Windows), [TeX live](https://www.tug.org/texlive/) (Linux), or [MacTeX](http://www.tug.org/mactex/) (OSX). 
+1. Make sure you have `xelatex` in your `PATH`. If it isn't, install a TeX distribution such as [MiKTeX](https://miktex.org/) (Windows), [TeX live](https://www.tug.org/texlive/) (Linux), or [MacTeX](http://www.tug.org/mactex/) (OSX).
 2. Make sure you have the font `DejaVu Sans` installed. You can get it from `dist/dejavu-sans` in this repository.
 3. Make sure you have [Node.js](https://nodejs.org/) installed.
 4. `npm install -g vankesteren/wa2pdf`
@@ -39,7 +39,7 @@ Here is the help for usage:
     - send your whatsapp log via email?
     - upload your log to a webpage?
 - Template: Make the template pretty.
-- CLI: use chalk to style output https://www.npmjs.com/package/chalk.
+- ~~CLI: use [chalk](https://www.npmjs.com/package/chalk.) to style output~~
 - Output: Optionally, calculate statistics etc for the report to be shown on top
     - total number of messages per person
     - most common words

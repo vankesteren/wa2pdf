@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 const program = require("commander");
 const engine = require("../engine/engine.js");
-const exec = require('child_process').exec;
+const exec = require("child_process").exec;
+const path = require("path");
+const { Spinner } = require("cli-spinner");
+const chalk = require("chalk");
 
 // The commandline interface
 program
@@ -10,16 +13,29 @@ program
   .option("-d, --debug", "Print debug information")
   .option("-s, --silent", "Do not open the converted pdf.")
   .action((file) => {
-    if (program.debug) console.log("\n  >>> Printing debug information <<< \n");
+    if (!program.output) {
+      var outFile = path.basename(file, path.extname(file)) + ".pdf";
+    } else {
+      var outFile = program.output;
+    }
 
-    engine.convert(file, program.output, program.debug, (err, path) => {
+    // init spinner
+    var sp = new Spinner(chalk.cyan("Converting " + file + " to " + outFile));
+    sp.setSpinnerString("~!@#$%^&*()_+");
+    sp.start();
+
+    // convert file
+    engine.convert(file, outFile, program.debug, (err, path) => {
+      // stop spinner
+      sp.stop();
+
       if (err) {
         console.error(err.name + ": " + err.message);
         process.exit();
       }
       if (!program.silent) {
         // open the generated pdf file
-        exec(getCommandLine() + ' ' + path);
+        exec(openCommand() + ' ' + path);
       }
     });
   })
@@ -27,7 +43,7 @@ program
 
 
 // https://stackoverflow.com/questions/29902347/open-a-file-with-default-program-in-node-webkit/29917107#29917107
-function getCommandLine() {
+function openCommand() {
    switch (process.platform) {
       case 'darwin' : return 'open';
       case 'win32' : return 'start';
