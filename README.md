@@ -9,6 +9,10 @@
 </p>
 <br>
 
+## Go to the [website](wa2pdf.ddns.net)
+[![](server.png)](wa2pdf.ddns.net)
+NB: It runs on a raspberry pi at home so be gentle and be patient; it's slow :)
+
 ## Prerequisites
 ### Windows
 1. Install [MiKTeX](https://miktex.org/).
@@ -54,9 +58,6 @@ Two steps:
 2. Run `npm start` in the main directory of the repo.
 
 The server will then start at port 8080. If you want a different port, use `npm start <portnumber>`. Direct your browser to the webpage. From there, you can upload WhatsApp log files to the server and download / save the pdf output.
-
-Here is what that looks like:
-![](server.png)
 
 ## To do
 Send me a pull request for (improvements on) any of these!
