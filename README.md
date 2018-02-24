@@ -9,8 +9,8 @@
 </p>
 <br>
 
-## Go to the [website](wa2pdf.ddns.net)
-[![](server.png)](wa2pdf.ddns.net)
+## Go to the [website](http://wa2pdf.ddns.net)
+[![](server.png)](http://wa2pdf.ddns.net)
 NB: It runs on a raspberry pi at home so be gentle and be patient; it's slow :)
 
 ## Prerequisites
